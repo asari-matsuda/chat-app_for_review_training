@@ -5,8 +5,11 @@ class RoomsController < ApplicationController
 
   def create
     @room = Room.new(room_params)
-    @room.save
-    redirect_to root_path
+    if @room.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def destroy
