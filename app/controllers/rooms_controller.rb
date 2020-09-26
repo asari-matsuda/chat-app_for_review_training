@@ -18,6 +18,13 @@ class RoomsController < ApplicationController
       room.destroy
     end
     redirect_to root_path
+
+    # エラーハンドリング・加藤さんならこう書く
+    # if room.destroy
+    #   redirect_to root_path
+    # else
+    #   render :index??
+    # end
   end
 
   private
